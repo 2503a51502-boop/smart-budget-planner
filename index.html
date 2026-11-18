@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Budget Planner | Virtual IoT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand-mark">
+    <span class="brand-dot"></span>
+    Smart Virtual IoT System
+  </div>
+  <div class="top-status">● SYSTEM ONLINE</div>
+</header>
+
+<main class="dashboard">
+
+  <section class="page-heading">
+    <div>
+      <p class="eyebrow">SMART FINANCIAL MONITORING</p>
+      <h1>Budget Control Dashboard</h1>
+      <p class="subtitle">Manage your monthly budget with virtual IoT hardware.</p>
+    </div>
+    <span class="device-tag">DEVICE ID: BP-001</span>
+  </section>
+
+  <section class="summary-grid">
+    <article class="summary-card">
+      <p>Monthly Budget</p>
+      <strong id="monthlyBudget">₹25,500</strong>
+      <small>Potentiometer input</small>
+    </article>
+
+    <article class="summary-card">
+      <p>Estimated Expenses</p>
+      <strong id="estimatedExpenses">₹3,000</strong>
+      <small>Current planned spending</small>
+    </article>
+
+    <article class="summary-card">
+      <p>Remaining Balance</p>
+      <strong class="balance" id="remainingBalance">₹22,500</strong>
+      <small>Money available</small>
+    </article>
+  </section>
+
+  <section class="hardware-grid">
+
+    <article class="panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">VIRTUAL HARDWARE</p>
+          <h2>Potentiometer</h2>
+        </div>
+        <span class="tag">INPUT</span>
+      </div>
+
+      <div class="knob-wrap">
+        <div class="knob"><span></span></div>
+        <strong>Adjust Monthly Budget</strong>
+        <output id="sliderBudget">₹25,500</output>
+      </div>
+
+      <input id="budgetSlider" type="range"
+        min="5000" max="100000" step="500" value="25500">
+
+      <div class="range-labels">
+        <span>₹5,000</span>
+        <span>₹1,00,000</span>
+      </div>
+
+      <div class="hardware-status">
+        ● Potentiometer Active
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">VIRTUAL HARDWARE</p>
+          <h2>OLED Display</h2>
+        </div>
+        <span class="tag">OUTPUT</span>
+      </div>
+
+      <div class="oled">
+        <div class="oled-title">BUDGET PLANNER</div>
+
+        <div class="oled-line">
+          <span>BUDGET</span>
+          <b id="oledBudget">25,500</b>
+        </div>
+
+        <div class="oled-line">
+          <span>EXPENSE</span>
+          <b id="oledExpense">3,000</b>
+        </div>
+
+        <div class="oled-line">
+          <span>BALANCE</span>
+          <b id="oledBalance">22,500</b>
+        </div>
+
+        <div class="oled-state" id="oledStatus">
+          STATUS: SAFE
+        </div>
+      </div>
+
+      <p class="oled-caption">SSD1306 Virtual OLED Simulation</p>
+    </article>
+
+  </section>
+
+  <section class="panel expense-panel">
+    <div class="panel-heading">
+      <div>
+        <p class="eyebrow">SIMULATION CONTROL</p>
+        <h2>Estimated Expenses</h2>
+      </div>
+      <span class="tag">INPUT</span>
+    </div>
+
+    <label for="expenseInput">
+      Enter your estimated monthly expenses
+    </label>
+
+    <div class="expense-entry">
+      <input id="expenseInput" type="number"
+        min="0" step="100" value="3000">
+
+      <button id="updateButton" type="button">
+        Update Expenses
+      </button>
+    </div>
+
+    <div class="utilization-label">
+      <span>Budget Utilization</span>
+      <strong id="utilizationText">11.8%</strong>
+    </div>
+
+    <div class="progress-track">
+      <div id="utilizationBar" class="progress-bar"></div>
+    </div>
+
+    <p id="inputError" class="error-message"></p>
+  </section>
+
+  <section class="panel led-panel">
+    <div class="panel-heading">
+      <div>
+        <p class="eyebrow">VIRTUAL HARDWARE</p>
+        <h2>LED Alert System</h2>
+      </div>
+      <span class="tag">OUTPUT</span>
+    </div>
+
+    <div class="leds">
+      <div class="led-unit">
+        <span id="greenLED" class="led green active"></span>
+        <strong>GREEN LED</strong>
+        <small id="greenText">ACTIVE - SAFE</small>
+      </div>
+
+      <div class="led-unit">
+        <span id="redLED" class="led red"></span>
+        <strong>RED LED</strong>
+        <small id="redText">INACTIVE</small>
+      </div>
+    </div>
+
+    <div id="alertMessage" class="alert safe">
+      <strong id="alertTitle">✓ Budget Under Control</strong>
+      <p id="alertDescription">
+        You have ₹22,500 remaining in your monthly budget.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Smart Budget Planner | Virtual IoT Project<br>
+    ESP32 Hardware Simulation • Stage 1
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
